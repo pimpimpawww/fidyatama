@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIDYATAMA Design & Build Contractor</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            dark: '#1a1a1a',
+            'dark-grey': '#2d2d2d',
+            'mid-grey': '#4a4a4a',
+            'light-grey': '#f5f5f5',
+            'card-grey': '#eeeeee',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* Masonry-style portfolio grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 12px;
+    }
+    .portfolio-grid .item-tall { grid-row: span 2; }
+
+    @media (max-width: 768px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-grid .item-tall { grid-row: span 1; }
+    }
+
+    /* Navbar scroll effect */
+    .navbar-scrolled {
+      background: rgba(255,255,255,0.97) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body class="font-sans bg-white text-dark antialiased">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="flex flex-col leading-none">
+        <span class="text-xl font-black tracking-widest text-white drop-shadow" id="logo-text">FIDYATAMA</span>
+        <span class="text-[10px] font-light tracking-wider text-white/80 drop-shadow" id="logo-sub">Design & Build Contractor</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#tentang" class="nav-link text-white hover:text-gray-300 transition-colors">Tentang Kami</a></li>
+        <li><a href="#layanan" class="nav-link text-white hover:text-gray-300 transition-colors">Layanan</a></li>
+        <li><a href="#portfolio" class="nav-link text-white hover:text-gray-300 transition-colors">Proyek</a></li>
+        <li><a href="#keunggulan" class="nav-link text-white hover:text-gray-300 transition-colors">Keunggulan</a></li>
+        <li><a href="#kontak" class="nav-link text-white hover:text-gray-300 transition-colors">Kontak</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-dark">
+      <a href="#tentang" class="hover:text-mid-grey transition-colors">Tentang Kami</a>
+      <a href="#layanan" class="hover:text-mid-grey transition-colors">Layanan</a>
+      <a href="#portfolio" class="hover:text-mid-grey transition-colors">Proyek</a>
+      <a href="#keunggulan" class="hover:text-mid-grey transition-colors">Keunggulan</a>
+      <a href="#kontak" class="hover:text-mid-grey transition-colors">Kontak</a>
+    </div>
+  </nav>
+  <!-- ===================== END NAVBAR ===================== -->
+
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-start overflow-hidden">
+
+    <!-- Background Image (Unsplash - modern luxury house) -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
+        alt="Modern Luxury House"
+        class="w-full h-full object-cover object-center"
+      />
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40">
+      <p class="text-sm font-semibold tracking-[0.3em] text-gray-300 uppercase mb-4">Design & Build Contractor</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight max-w-2xl mb-6">
+        Build with Trust,<br />
+        <span class="text-gray-300">Delivery with Quality</span>
+      </h1>
+      <p class="text-gray-300 text-base md:text-lg max-w-lg mb-10 leading-relaxed">
+        Design & Build Contractor yang menyediakan layanan perencanaan dan pelaksanaan pembangunan secara profesional, amanah, dan bergaransi.
+      </p>
+
+      <!-- CTA Button -->
+      <a
+        href="https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 bg-dark-grey hover:bg-mid-grey text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+      >
+        <i class="fab fa-whatsapp text-green-400 text-lg"></i>
+        Konsultasi Gratis
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <i class="fas fa-chevron-down text-white/50 text-xl"></i>
+    </div>
+  </section>
+  <!-- ===================== END HERO ===================== -->
+
+
+  <!-- ===================== TENTANG KAMI ===================== -->
+  <section id="tentang" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Section Label -->
+      <p class="text-xs font-bold tracking-[0.3em] text-mid-grey uppercase mb-2">Siapa Kami</p>
+      <h2 class="text-3xl md:text-4xl font-black text-dark mb-12">Tentang Kami</h2>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+
+        <!-- Kolom Kiri: Teks -->
+        <div>
+          <p class="text-mid-grey leading-relaxed mb-5">
+            <strong class="text-dark">FIDYATAMA Design & Build Contractor</strong> adalah perusahaan kontraktor yang bergerak di bidang jasa perencanaan (design) dan pelaksanaan (build) pembangunan untuk berbagai jenis bangunan, mulai dari rumah tinggal, gedung, gudang, hingga pabrik.
+          </p>
+          <p class="text-mid-grey leading-relaxed mb-5">
+            Kami hadir sebagai mitra terpercaya yang menghadirkan proses pembangunan yang amanah, profesional, anti ribet, tepat, dan bergaransi. Dengan dukungan tim berpengalaman, setiap proyek dikerjakan dengan standar mutu yang terukur, perencanaan matang, serta pengawasan konsisten.
+          </p>
+          <p class="text-mid-grey leading-relaxed">
+            Kepuasan dan kepercayaan klien adalah prioritas utama kami dalam setiap langkah pekerjaan.
+          </p>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 mt-10">
+            <div class="text-center p-4 bg-light-grey rounded-xl">
+              <p class="text-3xl font-black text-dark">50+</p>
+              <p class="text-xs text-mid-grey mt-1">Proyek Selesai</p>
+            </div>
+            <div class="text-center p-4 bg-light-grey rounded-xl">
+              <p class="text-3xl font-black text-dark">8+</p>
+              <p class="text-xs text-mid-grey mt-1">Tahun Pengalaman</p>
+            </div>
+            <div class="text-center p-4 bg-light-grey rounded-xl">
+              <p class="text-3xl font-black text-dark">100%</p>
+              <p class="text-xs text-mid-grey mt-1">Bergaransi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Visi & Misi -->
+        <div class="flex flex-col gap-6">
+
+          <!-- Visi -->
+          <div class="bg-light-grey rounded-xl p-7 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-dark rounded-lg flex items-center justify-center">
+                <i class="fas fa-eye text-white text-sm"></i>
+              </div>
+              <h3 class="text-lg font-bold text-dark">Visi Kami</h3>
+            </div>
+            <p class="text-mid-grey leading-relaxed text-sm">
+              Menjadi perusahaan Design & Build Contractor yang terpercaya dan terkemuka dalam kualitas, ketepatan waktu, serta kepuasan klien di seluruh Indonesia.
+            </p>
+          </div>
+
+          <!-- Misi -->
+          <div class="bg-light-grey rounded-xl p-7 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-dark rounded-lg flex items-center justify-center">
+                <i class="fas fa-bullseye text-white text-sm"></i>
+              </div>
+              <h3 class="text-lg font-bold text-dark">Misi Kami</h3>
+            </div>
+            <ul class="text-mid-grey text-sm space-y-2">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-dark mt-0.5 text-xs"></i> Memberikan layanan berkualitas profesional dan transparan.</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-dark mt-0.5 text-xs"></i> Menyelesaikan setiap proyek tepat waktu dan sesuai anggaran.</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-dark mt-0.5 text-xs"></i> Menggunakan material terbaik dengan harga yang kompetitif.</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-dark mt-0.5 text-xs"></i> Membangun hubungan jangka panjang berbasis kepercayaan.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== END TENTANG KAMI ===================== -->
+
+
+  <!-- ===================== LAYANAN KAMI ===================== -->
+  <section id="layanan" class="py-20 md:py-28 bg-light-grey">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <p class="text-xs font-bold tracking-[0.3em] text-mid-grey uppercase mb-2">Apa yang Kami Kerjakan</p>
+      <h2 class="text-3xl md:text-4xl font-black text-dark mb-4">Layanan Kami</h2>
+      <p class="text-mid-grey max-w-xl mb-12">Kami menyediakan berbagai layanan konstruksi dan perencanaan bangunan dengan standar kualitas tinggi.</p>
+
+      <!-- 5 Kolom Grid Layanan -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+
+        <!-- Layanan 1: Rumah Tinggal -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+          <div class="relative h-44 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80"
+              alt="Jasa Bangun Rumah Tinggal"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-3 left-3">
+              <div class="w-9 h-9 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                <i class="fas fa-home text-white text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-dark text-sm mb-1">Jasa Bangun Rumah Tinggal</h3>
+            <p class="text-xs text-mid-grey leading-relaxed">Pembangunan rumah tinggal dari pondasi hingga finishing sesuai desain.</p>
+          </div>
+        </div>
+
+        <!-- Layanan 2: Renovasi -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+          <div class="relative h-44 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=400&q=80"
+              alt="Renovasi & Pengembangan Bangunan"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-3 left-3">
+              <div class="w-9 h-9 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                <i class="fas fa-tools text-white text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-dark text-sm mb-1">Renovasi & Pengembangan Bangunan</h3>
+            <p class="text-xs text-mid-grey leading-relaxed">Renovasi total maupun parsial untuk memperbarui tampilan dan fungsi bangunan.</p>
+          </div>
+        </div>
+
+        <!-- Layanan 3: Gedung -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+          <div class="relative h-44 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80"
+              alt="Pembangunan Gedung & Gudang"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-3 left-3">
+              <div class="w-9 h-9 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                <i class="fas fa-building text-white text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-dark text-sm mb-1">Pembangunan Gedung & Gudang</h3>
+            <p class="text-xs text-mid-grey leading-relaxed">Konstruksi gedung komersial dan gudang industri skala menengah hingga besar.</p>
+          </div>
+        </div>
+
+        <!-- Layanan 4: Pabrik -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+          <div class="relative h-44 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80"
+              alt="Pembangunan Pabrik & Bangunan Industri"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-3 left-3">
+              <div class="w-9 h-9 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                <i class="fas fa-industry text-white text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-dark text-sm mb-1">Pembangunan Pabrik & Bangunan Industri</h3>
+            <p class="text-xs text-mid-grey leading-relaxed">Konstruksi fasilitas industri dan pabrik dengan standar keamanan tinggi.</p>
+          </div>
+        </div>
+
+        <!-- Layanan 5: Sondir & Pengukuran Tanah (BARU) -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group relative">
+          <!-- Badge Baru -->
+          <div class="absolute top-3 right-3 z-10 bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full">BARU</div>
+          <div class="relative h-44 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=400&q=80"
+              alt="Sondir & Pengukuran Tanah"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-3 left-3">
+              <div class="w-9 h-9 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                <i class="fas fa-drafting-compass text-white text-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-dark text-sm mb-1">Sondir & Pengukuran Tanah</h3>
+            <p class="text-xs text-mid-grey leading-relaxed">Uji daya dukung tanah (sondir) dan pengukuran lahan sebelum konstruksi dimulai.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===================== END LAYANAN ===================== -->
+
+
+  <!-- ===================== MENGAPA MEMILIH KAMI ===================== -->
+  <section id="keunggulan" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Kolom Kiri: Teks & Checklist -->
+        <div>
+          <p class="text-xs font-bold tracking-[0.3em] text-mid-grey uppercase mb-3">Keunggulan Kami</p>
+          <h2 class="text-4xl md:text-5xl font-black text-dark leading-tight mb-2">
+            MENGAPA<br />
+            <span class="text-5xl md:text-6xl">Memilih</span>
+          </h2>
+          <h2 class="text-4xl md:text-5xl font-black text-dark mb-2">FIDYATAMA</h2>
+          <p class="text-sm text-mid-grey mb-10">Design & Build Contractor</p>
+
+          <!-- Checklist -->
+          <ul class="space-y-5">
+            <li class="flex items-center gap-4">
+              <div class="w-8 h-8 bg-dark rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span class="text-dark font-semibold text-lg">Kontraktor Terpercaya</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="w-8 h-8 bg-dark rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span class="text-dark font-semibold text-lg">Tim Profesional dan Berpengalaman</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="w-8 h-8 bg-dark rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span class="text-dark font-semibold text-lg">Anti Ribet</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="w-8 h-8 bg-dark rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span class="text-dark font-semibold text-lg">Pengerjaan Tepat Waktu</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="w-8 h-8 bg-dark rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span class="text-dark font-semibold text-lg">Transparan dalam Anggaran dan Proses</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="w-8 h-8 bg-dark rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span class="text-dark font-semibold text-lg">Bergaransi</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom Kanan: Contact Person Card -->
+        <div class="flex flex-col gap-5">
+
+          <!-- Card Lokasi -->
+          <div class="bg-white rounded-xl p-6 shadow-md border border-gray-100 flex items-start gap-5">
+            <div class="w-14 h-14 bg-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-dark text-base mb-1">Area Pemalang</h4>
+              <p class="text-mid-grey text-sm">Jl. Karimata No. 6</p>
+              <p class="text-mid-grey text-sm">Mulyoharjo, Kab. Pemalang</p>
+            </div>
+          </div>
+
+          <!-- Card WhatsApp / Contact Person -->
+          <div class="bg-white rounded-xl p-6 shadow-md border border-gray-100 flex items-start gap-5">
+            <div class="w-14 h-14 bg-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fab fa-whatsapp text-white text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-dark text-base mb-1">WhatsApp</h4>
+              <p class="text-mid-grey text-sm">081 5672 0578</p>
+              <p class="text-mid-grey text-sm">CP. Heri</p>
+            </div>
+          </div>
+
+          <!-- Contact Person Card Utama -->
+          <div class="bg-dark rounded-xl p-6 shadow-lg text-white">
+            <div class="flex items-center gap-4 mb-5">
+              <!-- Avatar Placeholder -->
+              <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-2xl font-black">
+                H
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Heri Fidya</h4>
+                <p class="text-gray-400 text-sm">Project Manager</p>
+                <p class="text-gray-400 text-xs">Area Pemalang</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-gray-300 text-sm mb-5">
+              <i class="fas fa-phone text-xs"></i>
+              <span>081 5672 0578</span>
+            </div>
+
+            <!-- Tombol WA dengan pesan otomatis -->
+            <a
+              href="https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-3 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-colors duration-300"
+            >
+              <i class="fab fa-whatsapp text-lg"></i>
+              Hubungi via WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== END KEUNGGULAN ===================== -->
+
+
+  <!-- ===================== PORTFOLIO ===================== -->
+  <section id="portfolio" class="py-20 md:py-28 bg-light-grey">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <p class="text-xs font-bold tracking-[0.3em] text-mid-grey uppercase mb-2">Hasil Karya Kami</p>
+      <div class="flex items-end justify-between mb-10">
+        <h2 class="text-3xl md:text-4xl font-black text-dark">Portofolio<br />Design Kami</h2>
+        <a
+          href="https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden md:inline-flex items-center gap-2 bg-dark text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-mid-grey transition-colors"
+        >
+          See More Project <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- Masonry-style Portfolio Grid -->
+      <div class="portfolio-grid">
+
+        <!-- Item 1 - Tall (Interior) -->
+        <div class="item-tall rounded-xl overflow-hidden shadow-sm group cursor-pointer">
+          <div class="relative h-full min-h-[300px] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80"
+              alt="Interior Modern Living Room"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <i class="fas fa-expand text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="rounded-xl overflow-hidden shadow-sm group cursor-pointer">
+          <div class="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+              alt="Eksterior Rumah Modern"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <i class="fas fa-expand text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="rounded-xl overflow-hidden shadow-sm group cursor-pointer">
+          <div class="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80"
+              alt="Rumah Mewah Eksterior"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <i class="fas fa-expand text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="rounded-xl overflow-hidden shadow-sm group cursor-pointer">
+          <div class="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+              alt="Interior Dapur Modern"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <i class="fas fa-expand text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 - Tall (Gedung) -->
+        <div class="item-tall rounded-xl overflow-hidden shadow-sm group cursor-pointer">
+          <div class="relative h-full min-h-[300px] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80"
+              alt="Gedung Modern"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <i class="fas fa-expand text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="rounded-xl overflow-hidden shadow-sm group cursor-pointer">
+          <div class="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80"
+              alt="Rumah Minimalis"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+              <i class="fas fa-expand text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile CTA -->
+      <div class="mt-8 text-center md:hidden">
+        <a
+          href="https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-dark text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-mid-grey transition-colors"
+        >
+          See More Project <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== END PORTFOLIO ===================== -->
+
+
+  <!-- ===================== KONTAK / CTA SECTION ===================== -->
+  <section id="kontak" class="py-20 md:py-28 bg-dark">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-xs font-bold tracking-[0.3em] text-gray-400 uppercase mb-4">Mulai Proyek Anda</p>
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-5">Siap Membangun Bersama Kami?</h2>
+      <p class="text-gray-400 max-w-xl mx-auto mb-10 leading-relaxed">
+        Konsultasikan kebutuhan bangunan Anda dengan tim kami. Gratis, tanpa komitmen, dan kami siap membantu dari perencanaan hingga selesai.
+      </p>
+      <a
+        href="https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-green-500/30 hover:-translate-y-0.5 text-lg"
+      >
+        <i class="fab fa-whatsapp text-xl"></i>
+        Konsultasi Gratis Sekarang
+      </a>
+    </div>
+  </section>
+  <!-- ===================== END KONTAK ===================== -->
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-dark-grey py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+      <!-- Logo Besar -->
+      <div class="mb-4">
+        <p class="text-4xl md:text-5xl font-black tracking-widest text-white">FIDYATAMA</p>
+        <p class="text-sm text-gray-400 tracking-wider mt-1">Design & Build Contractor</p>
+      </div>
+
+      <!-- Divider -->
+      <div class="w-16 h-px bg-white/20 mx-auto my-6"></div>
+
+      <!-- Alamat -->
+      <p class="text-gray-400 text-sm mb-1">
+        <i class="fas fa-map-marker-alt mr-2"></i>
+        Jl. Karimata No. 6, Mulyoharjo, Kab. Pemalang, Jawa Tengah
+      </p>
+      <p class="text-gray-400 text-sm mb-6">
+        <i class="fab fa-whatsapp mr-2 text-green-400"></i>
+        081 5672 0578 (Heri Fidya - Project Manager)
+      </p>
+
+      <!-- Nav Links Footer -->
+      <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-500 mb-8">
+        <a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a>
+        <a href="#layanan" class="hover:text-white transition-colors">Layanan</a>
+        <a href="#portfolio" class="hover:text-white transition-colors">Proyek</a>
+        <a href="#keunggulan" class="hover:text-white transition-colors">Keunggulan</a>
+        <a href="#kontak" class="hover:text-white transition-colors">Kontak</a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-gray-600 text-xs">
+        &copy; 2026 Fidyatama. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
+
+
+  <!-- ===================== FLOATING WA BUTTON ===================== -->
+  <a
+    href="https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-green-500/40 transition-all duration-300 hover:scale-110"
+    title="Chat WhatsApp"
+  >
+    <i class="fab fa-whatsapp text-white text-2xl"></i>
+  </a>
+  <!-- ===================== END FLOATING WA ===================== -->
+
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // Navbar scroll effect: ubah warna navbar saat scroll
+    const navbar = document.getElementById('navbar');
+    const logoText = document.getElementById('logo-text');
+    const logoSub = document.getElementById('logo-sub');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+        logoText.classList.replace('text-white', 'text-dark');
+        logoSub.classList.replace('text-white/80', 'text-mid-grey');
+        navLinks.forEach(link => {
+          link.classList.replace('text-white', 'text-dark');
+          link.classList.replace('hover:text-gray-300', 'hover:text-mid-grey');
+        });
+        document.getElementById('menu-btn').classList.replace('text-white', 'text-dark');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+        logoText.classList.replace('text-dark', 'text-white');
+        logoSub.classList.replace('text-mid-grey', 'text-white/80');
+        navLinks.forEach(link => {
+          link.classList.replace('text-dark', 'text-white');
+          link.classList.replace('hover:text-mid-grey', 'hover:text-gray-300');
+        });
+        document.getElementById('menu-btn').classList.replace('text-dark', 'text-white');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Tutup mobile menu saat link diklik
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+
+</body>
+</html>

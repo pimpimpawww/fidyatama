@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --color-dark: #1c1c1a;
+  --color-dark-grey: #2a2a27;
+  --color-mid-grey: #5a5a52;
+  --color-light-grey: #eeeee8;
+  --color-cream: #f0f0eb;
+  --color-accent: #7a8c5e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Portfolio masonry grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.portfolio-grid .item-tall {
+  grid-row: span 2;
+}
+@media (max-width: 768px) {
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-grid .item-tall { grid-row: span 1; }
+}
