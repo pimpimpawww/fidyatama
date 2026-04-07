@@ -33,7 +33,7 @@ export default function Navbar() {
             FIDYATAMA
           </span>
           <span className={`text-[10px] font-light tracking-wider transition-colors duration-300 ${scrolled ? 'text-[#5a5a52]' : 'text-white/80'}`}>
-            Design & Build Contractor
+            Design, Build & Demolish Contractor
           </span>
         </a>
 

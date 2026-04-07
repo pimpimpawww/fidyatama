@@ -24,7 +24,7 @@ export default function Keunggulan() {
             <h2 className="text-4xl md:text-5xl font-black text-[#1c1c1a] leading-tight mb-1">MENGAPA</h2>
             <h2 className="text-4xl md:text-5xl font-black text-[#1c1c1a] mb-1">Memilih</h2>
             <h2 className="text-4xl md:text-5xl font-black text-[#1c1c1a] mb-2">FIDYATAMA</h2>
-            <p className="text-sm text-[#5a5a52] mb-10">Design & Build Contractor</p>
+            <p className="text-sm text-[#5a5a52] mb-10">Design, Build & Demolish Contractor</p>
 
             <ul className="space-y-5">
               {checklist.map((item) => (

@@ -24,7 +24,7 @@ export default function TentangKami() {
           {/* Kolom Kiri */}
           <div>
             <p className="text-[#5a5a52] leading-relaxed mb-5">
-              <strong className="text-[#1c1c1a]">FIDYATAMA Design & Build Contractor</strong> adalah
+              <strong className="text-[#1c1c1a]">FIDYATAMA Design, Build & Demolish Contractor</strong> adalah
               perusahaan kontraktor yang bergerak di bidang jasa perencanaan (design) dan pelaksanaan
               (build) pembangunan untuk berbagai jenis bangunan, mulai dari rumah tinggal, gedung,
               gudang, hingga pabrik.
@@ -62,7 +62,7 @@ export default function TentangKami() {
                 <h3 className="text-lg font-bold text-[#1c1c1a]">Visi Kami</h3>
               </div>
               <p className="text-[#5a5a52] leading-relaxed text-sm">
-                Menjadi perusahaan Design & Build Contractor yang terpercaya dan terkemuka dalam
+                Menjadi perusahaan Design, Build & Demolish Contractor yang terpercaya dan terkemuka dalam
                 kualitas, ketepatan waktu, serta kepuasan klien di seluruh Indonesia.
               </p>
             </div>

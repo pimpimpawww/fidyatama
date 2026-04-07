@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         <p className="text-4xl md:text-5xl font-black tracking-widest text-white">FIDYATAMA</p>
-        <p className="text-sm text-[#9a9a8e] tracking-wider mt-1">Design & Build Contractor</p>
+        <p className="text-sm text-[#9a9a8e] tracking-wider mt-1">Design, Build & Demolish Contractor</p>
 
         <div className="w-16 h-px bg-white/10 mx-auto my-6" />
 
