@@ -41,20 +41,33 @@ export default function Keunggulan() {
           {/* Kolom Kanan: Contact Cards */}
           <div className="flex flex-col gap-5">
 
-            {/* Card Lokasi */}
-            <div className="bg-white rounded-xl p-6 border border-[#ddddd6] flex items-start gap-5">
+            {/* Card Lokasi - klik ke Google Maps */}
+            <a
+              href="https://www.google.com/maps/place/KEDAI+KARIMATA/@-6.9096762,109.3865857,17z/data=!3m1!4b1!4m6!3m5!1s0x2e6fdb004f5832e1:0x39cdd1c9750ff82d!8m2!3d-6.9096762!4d109.3865857!16s%2Fg%2F11x191_z6j?hl=id&entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl p-6 border border-[#ddddd6] flex items-start gap-5 hover:shadow-md transition-shadow duration-300 cursor-pointer"
+            >
               <div className="w-14 h-14 bg-[#1c1c1a] rounded-xl flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-map-marker-alt text-white text-xl" />
               </div>
               <div>
-                <h4 className="font-bold text-[#1c1c1a] text-base mb-1">Area Pemalang</h4>
-                <p className="text-[#5a5a52] text-sm">Jl. Karimata No. 6</p>
-                <p className="text-[#5a5a52] text-sm">Mulyoharjo, Kab. Pemalang</p>
+                <h4 className="font-bold text-[#1c1c1a] text-base mb-1">Office</h4>
+                <p className="text-[#5a5a52] text-sm">Jl. Karimata No. 6, Perum Puri Praja Kencana</p>
+                <p className="text-[#5a5a52] text-sm">Mulyoharjo, Pemalang, Jawa Tengah</p>
+                <p className="text-[#7a8c5e] text-xs mt-1 flex items-center gap-1">
+                  <i className="fas fa-external-link-alt text-[10px]" /> Buka di Google Maps
+                </p>
               </div>
-            </div>
+            </a>
 
-            {/* Card WhatsApp */}
-            <div className="bg-white rounded-xl p-6 border border-[#ddddd6] flex items-start gap-5">
+            {/* Card WhatsApp - klik langsung ke WA */}
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl p-6 border border-[#ddddd6] flex items-start gap-5 hover:shadow-md transition-shadow duration-300 cursor-pointer"
+            >
               <div className="w-14 h-14 bg-[#1c1c1a] rounded-xl flex items-center justify-center flex-shrink-0">
                 <i className="fab fa-whatsapp text-white text-xl" />
               </div>
@@ -62,35 +75,11 @@ export default function Keunggulan() {
                 <h4 className="font-bold text-[#1c1c1a] text-base mb-1">WhatsApp</h4>
                 <p className="text-[#5a5a52] text-sm">081 5672 0578</p>
                 <p className="text-[#5a5a52] text-sm">CP. Heri</p>
+                <p className="text-[#7a8c5e] text-xs mt-1 flex items-center gap-1">
+                  <i className="fas fa-external-link-alt text-[10px]" /> Chat Sekarang
+                </p>
               </div>
-            </div>
-
-            {/* Contact Person Card */}
-            <div className="bg-[#1c1c1a] rounded-xl p-6 shadow-lg text-white">
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-14 h-14 bg-[#7a8c5e] rounded-full flex items-center justify-center text-2xl font-black">
-                  H
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">Heri Fidya</h4>
-                  <p className="text-gray-400 text-sm">Project Manager</p>
-                  <p className="text-gray-400 text-xs">Area Pemalang</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300 text-sm mb-5">
-                <i className="fas fa-phone text-xs" />
-                <span>081 5672 0578</span>
-              </div>
-              <a
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-[#7a8c5e] hover:bg-[#6a7a50] text-white font-semibold py-3 rounded-xl transition-colors duration-300"
-              >
-                <i className="fab fa-whatsapp text-lg" />
-                Hubungi via WhatsApp
-              </a>
-            </div>
+            </a>
 
           </div>
         </div>

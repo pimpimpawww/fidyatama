@@ -19,7 +19,7 @@ export default function Footer() {
 
         <p className="text-[#9a9a8e] text-sm mb-1">
           <i className="fas fa-map-marker-alt mr-2 text-[#7a8c5e]" />
-          Jl. Karimata No. 6, Mulyoharjo, Kab. Pemalang, Jawa Tengah
+          Jl. Karimata No. 6, Perum Puri Praja Kencana, Mulyoharjo, Pemalang, Jawa Tengah
         </p>
         <p className="text-[#9a9a8e] text-sm mb-6">
           <i className="fab fa-whatsapp mr-2 text-[#7a8c5e]" />
