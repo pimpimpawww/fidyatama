@@ -5,10 +5,10 @@ const stats = [
 ]
 
 const misi = [
-  'Memberikan layanan berkualitas profesional dan transparan.',
-  'Menyelesaikan setiap proyek tepat waktu dan sesuai anggaran.',
-  'Menggunakan material terbaik dengan harga yang kompetitif.',
-  'Membangun hubungan jangka panjang berbasis kepercayaan.',
+  'Memberikan layanan konstruksi dan pembongkaran yang profesional, transparan, dan mengutamakan keselamatan kerja.',
+  'Menghadirkan solusi pembangunan berbasis data teknis melalui pengujian tanah yang akurat.',
+  'Menjaga kepercayaan klien melalui hasil kerja yang presisi dan tanggung jawab penuh di setiap fase proyek.',
+  'Mengembangkan tim ahli yang kompeten dalam menangani teknologi konstruksi maupun alat berat untuk demolisi.',
 ]
 
 export default function TentangKami() {
@@ -24,19 +24,18 @@ export default function TentangKami() {
           {/* Kolom Kiri */}
           <div>
             <p className="text-[#5a5a52] leading-relaxed mb-5">
-              <strong className="text-[#1c1c1a]">FIDYATAMA Design, Build & Demolish Contractor</strong> adalah
-              perusahaan kontraktor yang bergerak di bidang jasa perencanaan (design) dan pelaksanaan
-              (build) pembangunan untuk berbagai jenis bangunan, mulai dari rumah tinggal, gedung,
-              gudang, hingga pabrik.
+              <strong className="text-[#1c1c1a]">FIDYATAMA Design, Build &amp; Demolish Contractor</strong> adalah
+              perusahaan kontraktor terintegrasi yang melayani jasa perencanaan (design), pelaksanaan
+              pembangunan (build), hingga pembongkaran bangunan (demolish). Kami menyediakan solusi
+              lengkap untuk berbagai jenis properti, mulai dari rumah tinggal, gedung, gudang, hingga
+              kawasan industri dan pabrik.
             </p>
             <p className="text-[#5a5a52] leading-relaxed mb-5">
-              Kami hadir sebagai mitra terpercaya yang menghadirkan proses pembangunan yang amanah,
-              profesional, anti ribet, tepat, dan bergaransi. Dengan dukungan tim berpengalaman,
-              setiap proyek dikerjakan dengan standar mutu yang terukur, perencanaan matang, serta
-              pengawasan konsisten.
-            </p>
-            <p className="text-[#5a5a52] leading-relaxed">
-              Kepuasan dan kepercayaan klien adalah prioritas utama kami dalam setiap langkah pekerjaan.
+              Kami hadir sebagai mitra strategis bagi klien yang menginginkan proses konstruksi yang
+              amanah, profesional, dan Anti Ribet. Keunggulan kami terletak pada layanan menyeluruh:
+              mulai dari pengujian teknis tanah (Sondir) untuk memastikan keamanan fondasi, desain
+              arsitektur yang estetis, hingga eksekusi pembangunan atau penghancuran struktur lama
+              secara aman dan terukur.
             </p>
 
             {/* Stats */}
@@ -62,8 +61,8 @@ export default function TentangKami() {
                 <h3 className="text-lg font-bold text-[#1c1c1a]">Visi Kami</h3>
               </div>
               <p className="text-[#5a5a52] leading-relaxed text-sm">
-                Menjadi perusahaan Design, Build & Demolish Contractor yang terpercaya dan terkemuka dalam
-                kualitas, ketepatan waktu, serta kepuasan klien di seluruh Indonesia.
+                Menjadi perusahaan Design, Build &amp; Demolish Contractor terdepan yang unggul dalam
+                inovasi, ketepatan waktu, dan integritas kerja demi kepuasan klien yang berkelanjutan.
               </p>
             </div>
 
@@ -75,10 +74,10 @@ export default function TentangKami() {
                 </div>
                 <h3 className="text-lg font-bold text-[#1c1c1a]">Misi Kami</h3>
               </div>
-              <ul className="text-[#5a5a52] text-sm space-y-2">
+              <ul className="text-[#5a5a52] text-sm space-y-3">
                 {misi.map((m) => (
                   <li key={m} className="flex items-start gap-2">
-                    <i className="fas fa-check text-[#7a8c5e] mt-0.5 text-xs" />
+                    <i className="fas fa-check text-[#7a8c5e] mt-0.5 text-xs flex-shrink-0" />
                     {m}
                   </li>
                 ))}

@@ -13,6 +13,7 @@ export default function Footer() {
 
         <p className="text-4xl md:text-5xl font-black tracking-widest text-white">FIDYATAMA</p>
         <p className="text-sm text-[#9a9a8e] tracking-wider mt-1">Design, Build & Demolish Contractor</p>
+        <p className="text-xs text-[#7a8c5e] italic mt-2">Build with Trust. Deliver with Quality. Demolish with Safety.</p>
 
         <div className="w-16 h-px bg-white/10 mx-auto my-6" />
 

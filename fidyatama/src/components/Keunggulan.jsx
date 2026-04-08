@@ -2,12 +2,12 @@ const WA_LINK =
   'https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama.'
 
 const checklist = [
-  'Kontraktor Terpercaya',
-  'Tim Profesional dan Berpengalaman',
-  'Anti Ribet',
-  'Pengerjaan Tepat Waktu',
-  'Transparan dalam Anggaran dan Proses',
-  'Bergaransi',
+  'One-Stop Solution: Bongkar, cek tanah, hingga bangun baru — satu kontraktor.',
+  'Kontraktor Terpercaya dengan rekam jejak proyek yang solid.',
+  'Tim Ahli & Profesional di bidang arsitektur, sipil, dan demolisi.',
+  'Anti Ribet: Kami tangani semua detail teknis untuk Anda.',
+  'Transparansi Anggaran tanpa biaya tersembunyi.',
+  'Bergaransi: Jaminan kualitas di setiap pekerjaan.',
 ]
 
 export default function Keunggulan() {
@@ -26,13 +26,13 @@ export default function Keunggulan() {
             <h2 className="text-4xl md:text-5xl font-black text-[#1c1c1a] mb-2">FIDYATAMA</h2>
             <p className="text-sm text-[#5a5a52] mb-10">Design, Build & Demolish Contractor</p>
 
-            <ul className="space-y-5">
+            <ul className="space-y-4">
               {checklist.map((item) => (
-                <li key={item} className="flex items-center gap-4">
-                  <div className="w-8 h-8 bg-[#1c1c1a] rounded-full flex items-center justify-center flex-shrink-0">
+                <li key={item} className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-[#1c1c1a] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <i className="fas fa-check text-white text-xs" />
                   </div>
-                  <span className="text-[#1c1c1a] font-semibold text-lg">{item}</span>
+                  <span className="text-[#1c1c1a] font-medium text-base">{item}</span>
                 </li>
               ))}
             </ul>

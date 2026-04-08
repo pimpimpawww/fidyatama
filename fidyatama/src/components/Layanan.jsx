@@ -1,50 +1,52 @@
+import Carousel from './Carousel'
+
 const services = [
   {
     title: 'Jasa Bangun Rumah Tinggal',
-    desc: 'Pembangunan rumah tinggal dari pondasi hingga finishing sesuai desain.',
+    desc: 'Pembangunan rumah impian dari nol dengan konsep desain fungsional, modern, dan sesuai karakter penghuninya.',
     icon: 'fa-home',
-    img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80',
+    img: '/images/layanan%20rumah.jpg',
     isNew: false,
   },
   {
     title: 'Renovasi & Pengembangan Bangunan',
-    desc: 'Renovasi total maupun parsial untuk memperbarui tampilan dan fungsi bangunan.',
+    desc: 'Transformasi dan peningkatan kualitas bangunan lama menjadi lebih segar, kokoh, dan bernilai tinggi.',
     icon: 'fa-tools',
-    img: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=400&q=80',
+    img: '/images/layanan%20renovasi.jpg',
     isNew: false,
   },
   {
-    title: 'Pembangunan Gedung & Gudang',
-    desc: 'Konstruksi gedung komersial dan gudang industri skala menengah hingga besar.',
+    title: 'Pembangunan Gedung, Gudang & Pabrik',
+    desc: 'Konstruksi skala besar untuk kebutuhan bisnis dan industri dengan standar struktur yang kuat dan efisiensi ruang maksimal.',
     icon: 'fa-building',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80',
+    img: '/images/layanan%20gedung.jpg',
     isNew: false,
   },
   {
-    title: 'Pembangunan Pabrik & Bangunan Industri',
-    desc: 'Konstruksi fasilitas industri dan pabrik dengan standar keamanan tinggi.',
-    icon: 'fa-industry',
-    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80',
+    title: 'Jasa Demolisi (Penghancuran Bangunan)',
+    desc: 'Pembongkaran bangunan lama secara total maupun parsial menggunakan metode yang aman, efektif, dan ramah lingkungan.',
+    icon: 'fa-hammer',
+    img: '/images/layanan%20demolisi.jpg',
     isNew: false,
   },
   {
     title: 'Sondir & Pengukuran Tanah',
-    desc: 'Uji daya dukung tanah (sondir) dan pengukuran lahan sebelum konstruksi dimulai.',
+    desc: 'Pemetaan lahan dan pengujian kekuatan tanah (Sondir) untuk menentukan jenis fondasi yang paling aman dan efisien.',
     icon: 'fa-drafting-compass',
-    img: 'https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=400&q=80',
+    img: '/images/layanan%20sondir.jpg',
     isNew: true,
   },
 ]
 
 function ServiceCard({ service }) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden border border-[#ddddd6] hover:shadow-md transition-shadow duration-300 group relative">
+    <div className="bg-white rounded-xl overflow-hidden border border-[#ddddd6] hover:shadow-md transition-shadow duration-300 group relative h-full">
       {service.isNew && (
         <div className="absolute top-3 right-3 z-10 bg-[#7a8c5e] text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
           BARU
         </div>
       )}
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative h-48 overflow-hidden">
         <img
           src={service.img}
           alt={service.title}
@@ -75,14 +77,14 @@ export default function Layanan() {
         </p>
         <h2 className="text-3xl md:text-4xl font-black text-[#1c1c1a] mb-4">Layanan Kami</h2>
         <p className="text-[#5a5a52] max-w-xl mb-12">
-          Kami menyediakan berbagai layanan konstruksi dan perencanaan bangunan dengan standar kualitas tinggi.
+          Solusi lengkap konstruksi — dari pengujian tanah, pembangunan, renovasi, hingga demolisi bangunan.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-          {services.map((s) => (
-            <ServiceCard key={s.title} service={s} />
-          ))}
-        </div>
+        <Carousel
+          slides={services}
+          autoplayDelay={3500}
+          renderSlide={(s) => <ServiceCard service={s} />}
+        />
 
       </div>
     </section>

@@ -12,8 +12,8 @@ export default function Kontak() {
           Siap Membangun Bersama Kami?
         </h2>
         <p className="text-[#9a9a8e] max-w-xl mx-auto mb-10 leading-relaxed">
-          Konsultasikan kebutuhan bangunan Anda dengan tim kami. Gratis, tanpa komitmen, dan kami
-          siap membantu dari perencanaan hingga selesai.
+          Konsultasikan kebutuhan bangunan Anda dengan tim kami — dari perencanaan, pembangunan,
+          hingga demolisi. Gratis, tanpa komitmen, siap membantu dari awal hingga selesai.
         </p>
         <a
           href={WA_LINK}

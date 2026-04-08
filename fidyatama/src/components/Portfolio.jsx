@@ -1,19 +1,22 @@
+import Carousel from './Carousel'
+
 const WA_LINK =
   'https://wa.me/628156720578?text=Halo%20Pak%20Heri%2C%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20project%20di%20Fidyatama.'
 
 const photos = [
-  { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80', alt: 'Interior Modern Living Room', tall: true },
-  { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80', alt: 'Eksterior Rumah Modern', tall: false },
-  { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80', alt: 'Rumah Mewah Eksterior', tall: false },
-  { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80', alt: 'Interior Dapur Modern', tall: false },
-  { src: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80', alt: 'Gedung Modern', tall: true },
-  { src: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80', alt: 'Rumah Minimalis', tall: false },
+  { src: '/images/portofolio-1.jpeg', alt: 'Portofolio Fidyatama 1' },
+  { src: '/images/portofolio-2.jpg',  alt: 'Portofolio Fidyatama 2' },
+  { src: '/images/portofolio-3.jpg',  alt: 'Portofolio Fidyatama 3' },
+  { src: '/images/portofolio-4.jpg',  alt: 'Portofolio Fidyatama 4' },
+  { src: '/images/portofolio-5.jpg',  alt: 'Portofolio Fidyatama 5' },
+  { src: '/images/portofolio-6.jpg',  alt: 'Portofolio Fidyatama 6' },
+  { src: '/images/portofolio-7.jpeg', alt: 'Portofolio Fidyatama 7' },
 ]
 
-function PhotoItem({ photo }) {
+function PhotoCard({ photo }) {
   return (
-    <div className={`rounded-xl overflow-hidden group cursor-pointer ${photo.tall ? 'item-tall' : ''}`}>
-      <div className={`relative overflow-hidden ${photo.tall ? 'h-full min-h-[300px]' : 'h-48'}`}>
+    <div className="rounded-xl overflow-hidden group cursor-pointer">
+      <div className="relative h-64 overflow-hidden">
         <img
           src={photo.src}
           alt={photo.alt}
@@ -33,11 +36,11 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-6">
 
         <p className="text-xs font-bold tracking-[0.3em] text-[#7a8c5e] uppercase mb-2">
-          Hasil Karya Kami
+          Hasil Nyata di Lapangan
         </p>
         <div className="flex items-end justify-between mb-10">
           <h2 className="text-3xl md:text-4xl font-black text-[#1c1c1a]">
-            Portofolio<br />Design Kami
+            Portofolio<br />Proyek Kami
           </h2>
           <a
             href={WA_LINK}
@@ -45,15 +48,15 @@ export default function Portfolio() {
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-2 bg-[#1c1c1a] text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-[#2a2a27] transition-colors"
           >
-            See More Project <i className="fas fa-arrow-right text-xs" />
+            Diskusi Proyek <i className="fas fa-arrow-right text-xs" />
           </a>
         </div>
 
-        <div className="portfolio-grid">
-          {photos.map((p) => (
-            <PhotoItem key={p.alt} photo={p} />
-          ))}
-        </div>
+        <Carousel
+          slides={photos}
+          autoplayDelay={2500}
+          renderSlide={(p) => <PhotoCard photo={p} />}
+        />
 
         <div className="mt-8 text-center md:hidden">
           <a
@@ -62,7 +65,7 @@ export default function Portfolio() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#1c1c1a] text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-[#2a2a27] transition-colors"
           >
-            See More Project <i className="fas fa-arrow-right text-xs" />
+            Diskusi Proyek <i className="fas fa-arrow-right text-xs" />
           </a>
         </div>
 

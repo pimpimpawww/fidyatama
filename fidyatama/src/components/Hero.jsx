@@ -26,11 +26,13 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight max-w-2xl mb-6">
           Build with Trust,
           <br />
-          <span className="text-gray-300">Delivery with Quality</span>
+          <span className="text-gray-300">Deliver with Quality.</span>
+          <br />
+          <span className="text-gray-400 text-3xl md:text-4xl lg:text-5xl">Demolish with Safety.</span>
         </h1>
         <p className="text-gray-300 text-base md:text-lg max-w-lg mb-10 leading-relaxed">
-          Design, Build & Demolish Contractor yang menyediakan layanan perencanaan dan
-          pelaksanaan pembangunan secara profesional, amanah, dan bergaransi.
+          Design, Build & Demolish Contractor yang menyediakan solusi lengkap — dari perencanaan,
+          pembangunan, hingga pembongkaran bangunan secara profesional, amanah, dan bergaransi.
         </p>
 
         {/* CTA */}
